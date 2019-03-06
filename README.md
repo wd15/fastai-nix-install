@@ -1,3 +1,9 @@
 # Toy Web App
 
-Test
+To run use
+
+    $ python app.py
+
+and
+
+    $ ngrok http 5000
