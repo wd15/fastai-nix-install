@@ -7,4 +7,9 @@ let
     sha256 = "1wr6dzy99rfx8s399zjjjcffppsbarxl2960wgb0xjzr7v65pikz";
   };
 in
-  import nixpkgs_download {}
+  import nixpkgs_download {
+    config = {
+      allowUnfree = true;
+      cudaSupport = true;
+    };
+  }
