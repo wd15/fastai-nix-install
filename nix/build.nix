@@ -15,5 +15,7 @@ in
     pypkgs.ipywidgets
     nixpkgs.python36Packages.jupyter
     pypkgs.pytorch
-    fastai
+    pypkgs.wheel
+    #pypkgs.spacy
+    #fastai
   ]

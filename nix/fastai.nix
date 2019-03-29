@@ -3,7 +3,8 @@ let
   pkgs = nixpkgs.pkgs;
   spacy = import ./spacy.nix { inherit pypkgs; };
   nvidia-ml-py3 = import ./nvidia-ml-py3.nix { inherit pypkgs; };
-  pypi2nix = import ./requirements.nix { inherit pkgs; };
+  # pypi2nix = import ./requirements.nix { inherit pkgs; }; 
+  fastprogress = import ./fastprogress.nix { inherit pypkgs; };
 in
   pypkgs.buildPythonPackage rec {
     pname = "fastai";
@@ -19,11 +20,13 @@ in
       pypkgs.pytorch
       pypkgs.matplotlib
       pypkgs.torchvision
-      spacy
+      pypkgs.spacy 
       pypkgs.typing
       nvidia-ml-py3
       pypkgs.dataclasses
-      pypi2nix.packages."fastprogress"
+      pypkgs.pytestrunner
+      # pypi2nix.packages."fastprogress"
+      fastprogress
     ];
     catchConflicts = false;
   }
