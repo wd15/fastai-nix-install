@@ -1,3 +1,7 @@
+# Helpful when fixing this recipe
+#
+# https://github.com/cdepillabout/course-v3/blob/6ecf90f640f327dc05b167f45fb7ba88bc265281/default.nix
+
 let
   nixpkgs = import ./nix/nixpkgs_version.nix;
 in
