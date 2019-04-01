@@ -6,7 +6,7 @@ let
   nixpkgs = import ./nix/nixpkgs_version.nix;
 in
   nixpkgs.stdenv.mkDerivation rec {
-    name = "fastai-stuff";
+    name = "fastai-build";
     env = nixpkgs.buildEnv { name=name; paths=buildInputs; };
     buildInputs = ( import ./nix/build.nix { inherit nixpkgs; });
     src = null;

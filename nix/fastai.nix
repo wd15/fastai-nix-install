@@ -5,6 +5,9 @@ let
   nvidia-ml-py3 = import ./nvidia-ml-py3.nix { inherit pypkgs; };
   # pypi2nix = import ./requirements.nix { inherit pkgs; }; 
   fastprogress = import ./fastprogress.nix { inherit pypkgs; };
+  pandas = pypkgs.pandas.overridePythonAttrs (oldAttrs: {
+    doCheck=false;
+  });
 in
   pypkgs.buildPythonPackage rec {
     pname = "fastai";
@@ -16,11 +19,11 @@ in
     doCheck=false;
     propagatedBuildInputs = [
       pypkgs.bottleneck
-      pypkgs.pandas
+      pandas
       pypkgs.pytorch
       pypkgs.matplotlib
       pypkgs.torchvision
-      pypkgs.spacy 
+      spacy 
       pypkgs.typing
       nvidia-ml-py3
       pypkgs.dataclasses

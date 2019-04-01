@@ -13,9 +13,8 @@ in
     pypkgs.pytest
     pypkgs.pip
     pypkgs.ipywidgets
-    nixpkgs.python36Packages.jupyter
+    pypkgs.jupyter
     pypkgs.pytorch
     pypkgs.wheel
-    #pypkgs.spacy
-    #fastai
+    fastai
   ]
