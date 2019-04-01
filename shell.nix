@@ -18,5 +18,7 @@ in
       pip install jupyter_contrib_nbextensions --user > /dev/null 2>&1
       jupyter contrib nbextension install --user > /dev/null 2>&1
       jupyter nbextension enable spellchecker/main > /dev/null 2>&1
+
+      export LD_PRELOAD="/usr/lib/x86_64-linux-gnu/libcuda.so.1 /usr/lib/nvidia-384/libnvidia-fatbinaryloader.so.384.130 /usr/lib/nvidia-384/libnvidia-ptxjitcompiler.so.384.130 /usr/lib/nvidia-384/libnvidia-ml.so.384.130"
     '';
 }
