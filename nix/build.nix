@@ -14,7 +14,6 @@ in
     pypkgs.pip
     pypkgs.ipywidgets
     pypkgs.jupyter
-    pypkgs.pytorch
     pypkgs.wheel
     fastai
   ]

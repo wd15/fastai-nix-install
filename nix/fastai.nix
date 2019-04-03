@@ -8,7 +8,21 @@ let
   pandas = pypkgs.pandas.overridePythonAttrs (oldAttrs: {
     doCheck=false;
   });
+  stdenv48 = nixpkgs.overrideCC nixpkgs.stdenv nixpkgs.pkgs.gcc48;
+  #buildPythonPackage48 = nixpkgs.overrideCC pypkgs.buildPythonPackage nixpkgs.pkgs.gcc48;
+  cudatoolkit = pkgs.cudatoolkit_9_0.override { gcc6 = pkgs.gcc48; };
+  pytorch = pypkgs.pytorch.override  {
+    cudatoolkit = cudatoolkit;
+    cudnn = pkgs.cudnn_cudatoolkit_9_0;
+    cudaSupport = true;
+    stdenv = stdenv48;
+    #buildPythonPackage = buildPythonPackage48;
+  };
+  pytorch_ = pytorch.overridePythonAttrs (oldAttrs: {
+    doCheck=false;
+  });
 in
+  #buildPythonPackage48 rec {
   pypkgs.buildPythonPackage rec {
     pname = "fastai";
     version = "1.0.49";
@@ -16,11 +30,12 @@ in
       inherit pname version;
       sha256 = "04rld53dbmsy5706ign9z8f75d8rgwv3lccsf32wm7sadgl4i92c";
     };
-    doCheck=false;
+    doCheck = false;
     propagatedBuildInputs = [
       pypkgs.bottleneck
       pandas
-      pypkgs.pytorch
+      # pypkgs.pytorch
+      pytorch_
       pypkgs.matplotlib
       pypkgs.torchvision
       spacy 
