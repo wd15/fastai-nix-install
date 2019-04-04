@@ -23,6 +23,6 @@ in
       jupyter contrib nbextension install --user > /dev/null 2>&1
       jupyter nbextension enable spellchecker/main > /dev/null 2>&1
 
-      export LD_PRELOAD="/usr/lib/x86_64-linux-gnu/libcuda.so.1 /usr/lib/nvidia-384/libnvidia-fatbinaryloader.so.384.130 /usr/lib/nvidia-384/libnvidia-ptxjitcompiler.so.384.130 /usr/lib/nvidia-384/libnvidia-ml.so.384.130"
+      export LD_PRELOAD="/usr/lib/x86_64-linux-gnu/libcuda.so.418.39 /usr/lib/nvidia-418/libnvidia-fatbinaryloader.so.418.39 /usr/lib/nvidia-418/libnvidia-ptxjitcompiler.so.418.39 /usr/lib/nvidia-418/libnvidia-ml.so.418.39"
     '';
 }
