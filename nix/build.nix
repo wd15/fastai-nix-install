@@ -16,4 +16,5 @@ in
     pypkgs.jupyter
     pypkgs.wheel
     fastai
+    pkgs.p7zip
   ]
