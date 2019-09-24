@@ -17,4 +17,6 @@ in
     pypkgs.wheel
     fastai
     pkgs.p7zip
+    pkgs.google-cloud-sdk
+    pkgs.openssh
   ]

@@ -32,3 +32,19 @@ Start up the notebook
 The `allow_remote_access` is required otherwise you get a 403. Copy
 the token and you should be able to view the notebooks from
 `http://intermediate-machine:8888/?token=<token>`.
+
+
+## Google Compute Platform
+
+Setup: https://course.fast.ai/start_gcp.html
+
+Note that I had to set `export ZONE="us-east1-c"` to get things
+working, but then I got the `Quota 'GPUS_ALL_REGIONS' exceeded` and
+have to wait to have that adjusted.
+
+To login into the instance
+
+    $ gcloud compute ssh --zone=$ZONE jupyter@$INSTANCE_NAME -- -L 8080:localhost:8080
+
+This will log in and also fire up a jupyter instance which you can see
+from `localhost:8080`.

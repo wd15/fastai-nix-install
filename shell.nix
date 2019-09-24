@@ -24,5 +24,10 @@ in
       jupyter nbextension enable spellchecker/main > /dev/null 2>&1
 
       export LD_PRELOAD="/usr/lib/x86_64-linux-gnu/libcuda.so.418.39 /usr/lib/nvidia-418/libnvidia-fatbinaryloader.so.418.39 /usr/lib/nvidia-418/libnvidia-ptxjitcompiler.so.418.39 /usr/lib/nvidia-418/libnvidia-ml.so.418.39"
+
+      export ZONE="us-east1-c"
+      export INSTANCE_NAME="my-fastai-instance"
+      export INSTANCE_TYPE="n1-highmem-8"
+
     '';
 }
