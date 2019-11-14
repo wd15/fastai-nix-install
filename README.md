@@ -42,9 +42,20 @@ Note that I had to set `export ZONE="us-east1-c"` to get things
 working, but then I got the `Quota 'GPUS_ALL_REGIONS' exceeded` and
 have to wait to have that adjusted.
 
+Start up the instance, go here
+
+    $ https://console.cloud.google.com/compute/instances?project=fastai-wd15&folder&organizationId&instancessize=50
+
 To login into the instance
 
     $ gcloud compute ssh --zone=$ZONE jupyter@$INSTANCE_NAME -- -L 8080:localhost:8080
 
 This will log in and also fire up a jupyter instance which you can see
 from `localhost:8080`.
+
+Go to
+
+    $ cd ~/tutorials/fastai/course-v3/nbs/dl1
+    $ jupyter notebook
+
+View the notebooks here at http://localhost:8080/lab?
